@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+"""
+Unit test for file storage module/class
+Author: Mire
+"""
+import unittest
+from models.base_model import BaseModel
+from models import storage
+
+class TestFileStorage(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        my_model_1 = BaseModel()
+        my_model_2 = BaseModel()
+        my_model_1.save()
+        my_model_2.save()
+        storage.reload()
+
+    def test_all(self):
+        self.assertEqual(my_model_1.all(), 'obj')
