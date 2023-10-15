@@ -5,7 +5,7 @@ The Base Model of our Airbnb clone project.
 
 import uuid
 from datetime import datetime
-
+from models import storage
 format = "%Y-%m-%dT%H:%M:%S.%f"
 
 
@@ -20,8 +20,9 @@ class BaseModel():
         """
         if (len(kwargs) == 0):
             self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+            self.created_at = datetime.now().strftime(format)
+            self.updated_at = datetime.now().strftime(format)
+            storage.new(self)
         else:
             for key, value in kwargs.item():
                 if key == 'created_at' or key == 'updated_at':
@@ -40,7 +41,8 @@ class BaseModel():
         """
         updates the public instance attribute
         """
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.now().strftime(format)
+        storage.save()
 
     def to_dict(self):
         """
@@ -49,6 +51,4 @@ class BaseModel():
         """
         cp_dict = dict(self.__dict__)
         cp_dict['__class__'] = self.__class__.__name__
-        cp_dict['created_at'] = self.created_at.strftime(format)
-        cp_dict['updated_at'] = self.updated_at.strftime(format)
         return (cp_dict)
