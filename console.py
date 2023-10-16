@@ -40,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
         Usage: exit
         """
 
-    def emptyline(self):
+    def emptyline(self, line):
         """shouldn't execute anything"""
         pass
 

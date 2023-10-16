@@ -51,6 +51,6 @@ class BaseModel():
         """
         cp_dict = dict(self.__dict__)
         cp_dict['__class__'] = self.__class__.__name__
-        cp_dict['created_at'] = self.created_at.strptime(format)
-        cp_dict['updated_at'] = self.updated_at.strptime(format)
+        cp_dict['created_at'] = self.created_at.strftime(format)
+        cp_dict['updated_at'] = self.updated_at.strftime(format)
         return (cp_dict)
