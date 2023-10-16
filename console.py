@@ -11,6 +11,7 @@ import json
 objects = storage.all()
 classes = ['BaseModel', 'User']
 
+
 class HBNBCommand(cmd.Cmd):
     """
     contains the entry point of the command interpreter
