@@ -5,7 +5,7 @@ The Base Model of our Airbnb clone project.
 
 import uuid
 from datetime import datetime
-from models import storage
+import models
 
 
 class BaseModel():
