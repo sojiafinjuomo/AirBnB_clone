@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
         """ Exit the program"""
         return True
 
-    def do_create(self, line=None):
+    def do_create(self, line):
         """
         Creates new instance of BaseModel
         Usage: create <class_name>
@@ -62,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
             new_model.save()
             print(new_model.id)
 
-    def do_show(self, line=None):
+    def do_show(self, line):
         """
         Prints String representation of an Instance
         Usage: show <class_name> <id>
