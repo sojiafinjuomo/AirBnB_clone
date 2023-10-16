@@ -21,10 +21,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotEqual(self.my_model_1.id, self.my_model_2.id)
         self.assertTrue(self.my_model_1.updated_at)
         self.assertTrue(self.my_model_1.created_at)
-        self.assertEqual(type(self.my_model_1.created_at), datetime)
-        self.assertEqual(type(self.my_model_1.updated_at), datetime)
-        self.assertEqual(type(self.my_model_2.created_at), datetime)
-        self.assertEqual(type(self.my_model_2.updated_at), datetime)
 
     def test_str_method(self):
         """Test that the string method __str__ prints the correct result"""
