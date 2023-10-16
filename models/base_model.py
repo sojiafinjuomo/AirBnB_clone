@@ -20,14 +20,9 @@ class BaseModel():
         """
         if (len(kwargs) == 0):
             self.id = str(uuid.uuid4())
-<<<<<<< HEAD
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-=======
-            self.created_at = datetime.now().strftime(format)
-            self.updated_at = datetime.now().strftime(format)
-            storage.new(self)
->>>>>>> 61c3c33a38afc7b8e1ebae9290aad8d47d7fe5c6
+            models.storage.new(self)
         else:
             for key, value in kwargs.item():
                 if key == 'created_at' or key == 'updated_at':
@@ -46,12 +41,8 @@ class BaseModel():
         """
         updates the public instance attribute
         """
-<<<<<<< HEAD
         self.updated_at = datetime.now()
-=======
-        self.updated_at = datetime.now().strftime(format)
-        storage.save()
->>>>>>> 61c3c33a38afc7b8e1ebae9290aad8d47d7fe5c6
+        models.storage.save()
 
     def to_dict(self):
         """
