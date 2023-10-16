@@ -6,12 +6,13 @@ and deserializes JSON file to instances
 Author: Mire
 """
 import json
+import models
 
 
 class FileStorage():
     """Serialization and Deserialization of Instances to and fro JSON file"""
 
-    __file_path = './models/engine/storage.json'
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
