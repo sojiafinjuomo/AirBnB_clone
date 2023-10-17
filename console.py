@@ -5,8 +5,13 @@ Authors: Mire & Soji
 """
 
 import cmd
+import models
 from models import storage
+from shlex import split as split
 from models.base_model import BaseModel
+from models.user import User
+from models.user import State
+from models.city import City
 import json
 objects = storage.all()
 classes = ['BaseModel', 'User']
