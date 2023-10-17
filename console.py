@@ -14,7 +14,7 @@ from models.user import State
 from models.city import City
 import json
 objects = storage.all()
-classes = ['BaseModel', 'User']
+classes = ['BaseModel', 'User', 'Place', 'City', 'Amenity', 'Review']
 
 
 class HBNBCommand(cmd.Cmd):
