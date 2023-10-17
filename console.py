@@ -16,7 +16,6 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 import json
-objects = storage.all()
 classes = {'BaseModel': BaseModel, 'User': User, 'State': State,
            'City': City, 'Amenity': Amenity, 'Place': Place,
            'Review': Review}
@@ -153,11 +152,11 @@ class HBNBCommand(cmd.Cmd):
         elif len(split_line) < 4:
             print("** value missing **")
         else:
-            new_model = split_line[0} + '.' + split_line[1]
+            new_model = split_line[0] + '.' + split_line[1]
             if new_model not in models.storeage.all():
                 print("** no instance found **")
             else:
-                setattr(models.storage.all(){new_model],
+                setattr(models.storage.all()[new_model],
                         split_line[2], split_line[3])
                 models.storage.save()
 
