@@ -9,7 +9,7 @@ from models import storage
 from models.base_model import BaseModel
 import json
 objects = storage.all()
-classes = ['BaseModel', 'User']
+classes = ['BaseModel', 'User', 'Place', 'City', 'Amenity', 'Review']
 
 
 class HBNBCommand(cmd.Cmd):

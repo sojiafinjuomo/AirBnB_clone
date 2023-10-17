@@ -6,13 +6,15 @@ and deserializes JSON file to instances
 Author: Mire
 """
 import json
-import models
+from datetime import datetime
+format = "%Y-%m-%dT%H:%M:%S.%f"
+
 
 
 class FileStorage():
     """Serialization and Deserialization of Instances to and fro JSON file"""
 
-    __file_path = "file.json"
+    __file_path = "./models/engine/storage.json"
     __objects = {}
 
     def all(self):
@@ -24,7 +26,7 @@ class FileStorage():
         class_name = obj.__class__.__name__
         instance_id = obj.id
         store_object = f"{class_name}.{instance_id}"
-        self.__objects[store_object] = obj.__dict__
+        self.__objects[store_object] = obj.to_dict()
 
     def save(self):
         """Serializes object dictionary to json file"""
@@ -36,5 +38,5 @@ class FileStorage():
         try:
             with open(self.__file_path, "r") as storage_file:
                 self.__objects = json.load(storage_file)
-        except FileNotFoundError:
+        except Exception:
             pass

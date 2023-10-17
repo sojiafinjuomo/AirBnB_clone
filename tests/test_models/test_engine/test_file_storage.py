@@ -30,7 +30,6 @@ class TestFileStorage(unittest.TestCase):
         cls.my_model_2.city = "lagos"
         cls.my_model_1.save()
         cls.my_model_2.save()
-        storage.reload()
 
     def test_all(self):
         """Tests the all method that it returns the correct data
